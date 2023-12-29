@@ -222,9 +222,10 @@ if (isset($_GET['id_produk'])) {
                         <?php
     
                         include('koneksi.php');
-
+                        //no.3//
                         class Product
                         {
+                            //encapsulation//
                             public $id;
                             public $name;
                             public $price;
@@ -250,15 +251,22 @@ if (isset($_GET['id_produk'])) {
                             {
                                 return $this->price;
                             }
-                            public function getGrandTotal()
-                            {
-                                return $this->price;
+                            //bikin get grend total disini
+                            public function getGrandTotal($getGrandTotal){
+                                return $this->price=$price;
                             }
                             public function jumlah()
                             {
                                 return $this->id;
                             }
                          
+                        }//polimorfismenya ini
+                        class poliMor extends Product{
+                            class polimorpisem extends Product{
+                                public function getLabel(){
+                                    return parent::getLabel();
+                                }
+                            }
                         }
 
                         class ShoppingCart
