@@ -259,15 +259,18 @@ if (isset($_GET['id_produk'])) {
                             {
                                 return $this->id;
                             }
+                            //misalkan kita buatkan getlabel//
+                            public function getLabel(){
+                                return "$this->id, $this->price";
+                            }
                          
                         }//polimorfismenya ini
                         class poliMor extends Product{
-                            class polimorpisem extends Product{
                                 public function getLabel(){
                                     return parent::getLabel();
                                 }
                             }
-                        }
+                        
 
                         class ShoppingCart
                         {
